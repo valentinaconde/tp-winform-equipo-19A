@@ -34,13 +34,14 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMarca = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.lblMarca = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -114,6 +115,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // lblMarca
+            // 
+            this.lblMarca.AccessibleName = "lblMarca";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(4, 24);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 8;
+            this.lblMarca.Text = "Marca";
+            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(62, 73);
@@ -167,15 +178,15 @@
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             // 
-            // lblMarca
+            // button1
             // 
-            this.lblMarca.AccessibleName = "lblMarca";
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(4, 24);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
-            this.lblMarca.TabIndex = 8;
-            this.lblMarca.Text = "Marca";
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(260, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(340, 199);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "LESLIECHAO ESTUVO ACA";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -183,6 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.btnEliminar);
@@ -215,6 +227,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Button button1;
     }
 }
 
