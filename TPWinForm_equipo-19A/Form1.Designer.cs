@@ -42,6 +42,7 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -96,7 +97,7 @@
             this.pbxImagen.AccessibleName = "pbxImagen";
             this.pbxImagen.Location = new System.Drawing.Point(651, 27);
             this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(137, 278);
+            this.pbxImagen.Size = new System.Drawing.Size(137, 314);
             this.pbxImagen.TabIndex = 4;
             this.pbxImagen.TabStop = false;
             // 
@@ -187,6 +188,17 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "LESLIECHAO ESTUVO ACA";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(344, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 60);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "mili test cambios";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -194,13 +206,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Listado Articulos";
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
@@ -228,6 +241,7 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
