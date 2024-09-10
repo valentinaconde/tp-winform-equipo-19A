@@ -64,5 +64,12 @@ namespace TPWinForm_equipo_19A
                 conexion.Close();
             }
         }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+
     }
 }
