@@ -14,7 +14,7 @@ namespace TPWinForm_equipo_19A
 
             try
             {
-                datos.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio FROM ARTICULOS");
+                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, IdMarca, Precio, C.Descripcion Categoria FROM ARTICULOS A, CATEGORIAS C WHERE A.IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -25,7 +25,9 @@ namespace TPWinForm_equipo_19A
                     aux.Nombre = datos.Lector["Nombre"].ToString();
                     aux.Descripcion = datos.Lector["Descripcion"].ToString();
                     aux.IdMarca = (int)datos.Lector["IdMarca"];
-                    aux.IdCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.categoria = new Categoria();
+                    aux.categoria.Descripcion = datos.Lector["Categoria"].ToString();
+                    //aux.IdCategoria = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     list.Add(aux);
@@ -48,7 +50,7 @@ namespace TPWinForm_equipo_19A
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.IdMarca + ", " + nuevo.IdCategoria + ", " + nuevo.Precio + ")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.IdMarca + ", " + nuevo.categoria.Descripcion + ", " + nuevo.Precio + ")");
                 datos.ejecutarAccion();
 
 

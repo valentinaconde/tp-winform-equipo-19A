@@ -32,7 +32,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -42,10 +41,11 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,15 +91,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // pbxImagen
-            // 
-            this.pbxImagen.AccessibleName = "pbxImagen";
-            this.pbxImagen.Location = new System.Drawing.Point(780, 53);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(318, 314);
-            this.pbxImagen.TabIndex = 4;
-            this.pbxImagen.TabStop = false;
             // 
             // groupBox1
             // 
@@ -188,6 +179,15 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(743, 189);
             this.dgvArticulos.TabIndex = 6;
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(782, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 249);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -196,9 +196,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1353, 711);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -207,11 +207,11 @@
             this.Text = "Listado Articulos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +223,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtMarca;
@@ -233,6 +232,7 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

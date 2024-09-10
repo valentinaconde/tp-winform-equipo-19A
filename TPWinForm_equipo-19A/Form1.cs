@@ -79,5 +79,10 @@ namespace TPWinForm_equipo_19A
             Negocio negocio = new Negocio();
             dgvArticulos.DataSource = negocio.Listar();
         }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
