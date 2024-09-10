@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TPWinForm_equipo_19A
 {
-    internal class Images
+    class Images
     {
+        public int Id { get; set; }
+        public string URLImg { get; set; }
+
     }
 }
