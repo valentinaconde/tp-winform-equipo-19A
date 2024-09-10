@@ -62,7 +62,7 @@
             // btnAgregar
             // 
             this.btnAgregar.AccessibleName = "btnAgregar";
-            this.btnAgregar.Location = new System.Drawing.Point(12, 101);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 296);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(64, 24);
             this.btnAgregar.TabIndex = 1;
@@ -73,7 +73,7 @@
             // btnEditar
             // 
             this.btnEditar.AccessibleName = "btnEditar";
-            this.btnEditar.Location = new System.Drawing.Point(82, 101);
+            this.btnEditar.Location = new System.Drawing.Point(82, 296);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(64, 24);
             this.btnEditar.TabIndex = 2;
@@ -84,7 +84,7 @@
             // btnEliminar
             // 
             this.btnEliminar.AccessibleName = "btnEliminar";
-            this.btnEliminar.Location = new System.Drawing.Point(152, 101);
+            this.btnEliminar.Location = new System.Drawing.Point(152, 296);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(64, 24);
             this.btnEliminar.TabIndex = 3;
@@ -95,9 +95,9 @@
             // pbxImagen
             // 
             this.pbxImagen.AccessibleName = "pbxImagen";
-            this.pbxImagen.Location = new System.Drawing.Point(651, 27);
+            this.pbxImagen.Location = new System.Drawing.Point(780, 53);
             this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(137, 314);
+            this.pbxImagen.Size = new System.Drawing.Size(318, 314);
             this.pbxImagen.TabIndex = 4;
             this.pbxImagen.TabStop = false;
             // 
@@ -184,9 +184,9 @@
             // 
             this.dgvArticulos.AccessibleName = "dgvArticulos";
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(19, 152);
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 101);
             this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.Size = new System.Drawing.Size(604, 189);
+            this.dgvArticulos.Size = new System.Drawing.Size(743, 189);
             this.dgvArticulos.TabIndex = 6;
             // 
             // Form1
@@ -195,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1353, 711);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbxImagen);

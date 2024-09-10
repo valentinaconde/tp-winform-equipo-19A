@@ -31,7 +31,8 @@ namespace TPWinForm_equipo_19A
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
 
         }
 

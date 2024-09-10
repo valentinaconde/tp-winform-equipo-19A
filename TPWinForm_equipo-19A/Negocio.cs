@@ -10,30 +10,23 @@ namespace TPWinForm_equipo_19A
         public List<Articulo> Listar()
         {
             List<Articulo> list = new List<Articulo>();
-            SqlConnection con = new SqlConnection();
-            SqlCommand sqlCommand = new SqlCommand();
-            SqlDataReader reader;
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                con.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true ";
-                sqlCommand.CommandType = System.Data.CommandType.Text;
-                sqlCommand.CommandText = "SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio FROM ARTICULOS";
-                sqlCommand.Connection = con;
+                datos.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio FROM ARTICULOS");
+                datos.ejecutarLectura();
 
-                con.Open();
-                reader = sqlCommand.ExecuteReader();
-
-                while (reader.Read())
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Id = (int)reader["Id"];
-                    aux.Codigo = reader["Codigo"].ToString();
-                    aux.Nombre = reader["Nombre"].ToString();
-                    aux.Descripcion = reader["Descripcion"].ToString();
-                    aux.IdMarca = (int)reader["IdMarca"];
-                    aux.IdCategoria = (int)reader["IdCategoria"];
-                    aux.Precio = (decimal)reader["Precio"];
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = datos.Lector["Codigo"].ToString();
+                    aux.Nombre = datos.Lector["Nombre"].ToString();
+                    aux.Descripcion = datos.Lector["Descripcion"].ToString();
+                    aux.IdMarca = (int)datos.Lector["IdMarca"];
+                    aux.IdCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
 
                     list.Add(aux);
                 }
@@ -42,13 +35,55 @@ namespace TPWinForm_equipo_19A
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
-                return list; // Return the list even if an exception occurs  
+                throw ex;
+             
             }
             finally
             {
-                con.Close();
+                datos.cerrarConexion();
             }
         }
+        public void agregar(Articulo nuevo)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.IdMarca + ", " + nuevo.IdCategoria + ", " + nuevo.Precio + ")");
+                datos.ejecutarAccion();
+
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void modificar(Articulo modificar)
+        {
+
+        }
+
+        public void eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
+            }
+
+        }
     }
+
+
+
 }
