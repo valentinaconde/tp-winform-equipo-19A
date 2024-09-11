@@ -15,8 +15,8 @@ namespace TPWinForm_equipo_19A
 
         public AccesoDatos()
         {
-            //TIENE MI CONTRASEÑA DE BASE DE DATOS POR LAS DUDAS
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=false; user=sa; password=les123456");
+            //TIENE MI CONTRASEÑA DE BASE DE DATOS POR LAS DUDAS:user=sa; password=les123456;                          
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

@@ -38,7 +38,8 @@ namespace TPWinForm_equipo_19A
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            frmModificarArticulo modificar = new frmModificarArticulo();
+            //dificar.showDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -68,7 +68,14 @@ namespace TPWinForm_equipo_19A
 
         public void modificar(Articulo modificar)
         {
-
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
+            }
         }
 
         public void eliminar(int id)
