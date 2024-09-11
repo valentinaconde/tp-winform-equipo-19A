@@ -68,6 +68,8 @@
     <Compile Include="frmModificarArticulo.Designer.cs">
       <DependentUpon>frmModificarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marca.cs" />
+    <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Negocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

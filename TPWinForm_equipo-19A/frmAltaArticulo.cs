@@ -32,7 +32,7 @@ namespace TPWinForm_equipo_19A
                 nuevo.Codigo = codTextBox.Text;
                 nuevo.Nombre = nomTextBox.Text;
                 nuevo.Descripcion = descTextBox.Text;
-                nuevo.IdMarca = Convert.ToInt32(idMarcaTextBox.Text);
+                nuevo.marca.Nombre = descTextBox.Text;
                 //chequear esto
                 nuevo.categoria.Descripcion = descTextBox.Text;
                 nuevo.Precio = Convert.ToDecimal(precTextBox.Text);

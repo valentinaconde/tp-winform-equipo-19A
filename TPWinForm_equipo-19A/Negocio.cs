@@ -14,7 +14,7 @@ namespace TPWinForm_equipo_19A
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, IdMarca, Precio, C.Descripcion Categoria FROM ARTICULOS A, CATEGORIAS C WHERE A.IdCategoria = C.Id");
+                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, Precio, C.Descripcion Categoria, M.Descripcion Marca, I.ImagenUrl urlImagen FROM ARTICULOS A, CATEGORIAS C, MARCAS M, IMAGENES I WHERE A.IdMarca = M.Id  AND A.IdCategoria = C.Id AND A.Id = I.IdArticulo");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -24,11 +24,13 @@ namespace TPWinForm_equipo_19A
                     aux.Codigo = datos.Lector["Codigo"].ToString();
                     aux.Nombre = datos.Lector["Nombre"].ToString();
                     aux.Descripcion = datos.Lector["Descripcion"].ToString();
-                    aux.IdMarca = (int)datos.Lector["IdMarca"];
+                    aux.marca = new Marca();
+                    aux.marca.Nombre = datos.Lector["Marca"].ToString();
                     aux.categoria = new Categoria();
                     aux.categoria.Descripcion = datos.Lector["Categoria"].ToString();
                     //aux.IdCategoria = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.UrlImagem = datos.Lector["urlImagen"].ToString();
 
                     list.Add(aux);
                 }
@@ -50,7 +52,7 @@ namespace TPWinForm_equipo_19A
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.IdMarca + ", " + nuevo.categoria.Descripcion + ", " + nuevo.Precio + ")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.marca.Nombre + ", " + nuevo.categoria.Descripcion + ", " + nuevo.Precio + ")");
                 datos.ejecutarAccion();
 
 
