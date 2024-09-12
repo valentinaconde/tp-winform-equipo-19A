@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
 namespace TPWinForm_equipo_19A
 {

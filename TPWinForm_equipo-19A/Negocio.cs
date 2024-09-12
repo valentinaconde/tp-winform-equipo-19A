@@ -2,10 +2,11 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
+using Dominio;
 
 namespace TPWinForm_equipo_19A
 {
-    class Negocio
+    public class Negocio
     {
         public List<Articulo> Listar()
         {

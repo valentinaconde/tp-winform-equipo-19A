@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 using System.Data.SqlClient;
 
@@ -39,8 +40,10 @@ namespace TPWinForm_equipo_19A
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmModificarArticulo modificar = new frmModificarArticulo();
-            //dificar.showDialog();
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            //modificar.showDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

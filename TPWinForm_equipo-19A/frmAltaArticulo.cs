@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace TPWinForm_equipo_19A
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void btnCancelarAlta_Click(object sender, EventArgs e)
@@ -49,6 +57,12 @@ namespace TPWinForm_equipo_19A
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void frmAltaArticulo_Load(object sender, EventArgs e)
+        {
+           
+           
         }
     }
 }

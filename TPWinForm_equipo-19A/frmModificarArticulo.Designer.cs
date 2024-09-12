@@ -30,17 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.textBox1.Location = new System.Drawing.Point(315, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Modificar Articulo";
-            // 
+            
             // frmModificarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

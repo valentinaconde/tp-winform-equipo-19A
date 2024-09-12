@@ -209,6 +209,7 @@
             this.Controls.Add(this.codigoLabel);
             this.Name = "frmAltaArticulo";
             this.Text = "Alta Articulo";
+            this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
