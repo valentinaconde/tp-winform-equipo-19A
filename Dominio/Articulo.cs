@@ -1,4 +1,4 @@
-﻿namespace TPWinForm_equipo_19A
+﻿namespace Dominio
 {
     public class Articulo
     {
