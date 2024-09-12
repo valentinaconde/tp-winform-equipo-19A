@@ -85,7 +85,7 @@ namespace TPWinForm_equipo_19A
             listaArticulos = negocio.Listar();
             dgvArticulos.DataSource = listaArticulos;
 
-            //ESTO ES PARA QUE NO SE MUESTRE LA COLUMNA DE URL PERO ROMPE TAMBIEN
+            //ESTO ES PARA QUE NO SE MUESTRE LA COLUMNA DE URL PERO ROMPE TAMBIE
             //dgvArticulos.Columns["UrlImagen"].Visible = false;
             pbxArticulo.Load(listaArticulos[0].UrlImagem);
             
@@ -95,11 +95,28 @@ namespace TPWinForm_equipo_19A
         {
 
         }
+
+        private void pbxArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
         //ESTA COMENTADO EN EL DESIGNER TAMBIEN
-        //private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-        //    pbxArticulo.Load(seleccionado.UrlImagem);
-        //}
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagem);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://6104926.fs1.hubspotusercontent-na1.net/hubfs/6104926/Imported_Blog_Media/defect1.jpg");
+            }
+        }
     }
 }

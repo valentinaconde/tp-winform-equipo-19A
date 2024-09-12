@@ -40,11 +40,11 @@ namespace TPWinForm_equipo_19A
                 nuevo.Codigo = codTextBox.Text;
                 nuevo.Nombre = nomTextBox.Text;
                 nuevo.Descripcion = descTextBox.Text;
-                nuevo.marca = new Marca();
-                nuevo.marca.Nombre = descTextBox.Text;
+                //nuevo.marca = new Marca();
+                nuevo.marca = (Marca)cboMarca.SelectedItem;
                 //chequear esto
-                nuevo.categoria = new Categoria();
-                nuevo.categoria.Descripcion = descTextBox.Text;
+                //nuevo.categoria = new Categoria();
+                nuevo.categoria = (Categoria)cboCategoria.SelectedItem;
                 nuevo.Precio = Convert.ToDecimal(precTextBox.Text);
 
                 
@@ -61,8 +61,23 @@ namespace TPWinForm_equipo_19A
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            try
+            {
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboCategoria.DataSource = categoriaNegocio.listar();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.ToString());         
+            }
            
-           
+        }
+
+        private void idMarcaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

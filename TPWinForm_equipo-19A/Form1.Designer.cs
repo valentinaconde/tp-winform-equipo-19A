@@ -180,7 +180,6 @@
             this.dgvArticulos.Size = new System.Drawing.Size(840, 189);
             this.dgvArticulos.TabIndex = 6;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
-            //this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pbxArticulo
             // 
@@ -190,6 +189,7 @@
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 7;
             this.pbxArticulo.TabStop = false;
+            this.pbxArticulo.Click += new System.EventHandler(this.pbxArticulo_Click);
             // 
             // Form1
             // 

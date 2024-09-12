@@ -36,13 +36,13 @@
             this.descLabel = new System.Windows.Forms.Label();
             this.precTextBox = new System.Windows.Forms.TextBox();
             this.precLabel = new System.Windows.Forms.Label();
-            this.idMarcaTextBox = new System.Windows.Forms.TextBox();
             this.idMarcaLabel = new System.Windows.Forms.Label();
-            this.idCatTextBox = new System.Windows.Forms.TextBox();
             this.idCatLabel = new System.Windows.Forms.Label();
             this.btnAceptarAlta = new System.Windows.Forms.Button();
             this.btnCancelarAlta = new System.Windows.Forms.Button();
             this.lblAlta = new System.Windows.Forms.Label();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // codigoLabel
@@ -117,14 +117,6 @@
             this.precLabel.TabIndex = 6;
             this.precLabel.Text = "Precio";
             // 
-            // idMarcaTextBox
-            // 
-            this.idMarcaTextBox.AccessibleName = "idMarcaTextBox";
-            this.idMarcaTextBox.Location = new System.Drawing.Point(305, 236);
-            this.idMarcaTextBox.Name = "idMarcaTextBox";
-            this.idMarcaTextBox.Size = new System.Drawing.Size(195, 20);
-            this.idMarcaTextBox.TabIndex = 9;
-            // 
             // idMarcaLabel
             // 
             this.idMarcaLabel.AccessibleName = "idMarcaLabel";
@@ -134,14 +126,6 @@
             this.idMarcaLabel.Size = new System.Drawing.Size(37, 13);
             this.idMarcaLabel.TabIndex = 8;
             this.idMarcaLabel.Text = "Marca";
-            // 
-            // idCatTextBox
-            // 
-            this.idCatTextBox.AccessibleName = "idCatTextBox";
-            this.idCatTextBox.Location = new System.Drawing.Point(305, 272);
-            this.idCatTextBox.Name = "idCatTextBox";
-            this.idCatTextBox.Size = new System.Drawing.Size(195, 20);
-            this.idCatTextBox.TabIndex = 11;
             // 
             // idCatLabel
             // 
@@ -186,18 +170,36 @@
             this.lblAlta.TabIndex = 14;
             this.lblAlta.Text = "Alta articulo";
             // 
+            // cboMarca
+            // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(305, 236);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(195, 21);
+            this.cboMarca.TabIndex = 15;
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(305, 267);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(195, 21);
+            this.cboCategoria.TabIndex = 16;
+            // 
             // frmAltaArticulo
             // 
             this.AccessibleName = "frmAltaArticulo";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.lblAlta);
             this.Controls.Add(this.btnCancelarAlta);
             this.Controls.Add(this.btnAceptarAlta);
-            this.Controls.Add(this.idCatTextBox);
             this.Controls.Add(this.idCatLabel);
-            this.Controls.Add(this.idMarcaTextBox);
             this.Controls.Add(this.idMarcaLabel);
             this.Controls.Add(this.precTextBox);
             this.Controls.Add(this.precLabel);
@@ -225,12 +227,12 @@
         private System.Windows.Forms.Label descLabel;
         private System.Windows.Forms.TextBox precTextBox;
         private System.Windows.Forms.Label precLabel;
-        private System.Windows.Forms.TextBox idMarcaTextBox;
         private System.Windows.Forms.Label idMarcaLabel;
-        private System.Windows.Forms.TextBox idCatTextBox;
         private System.Windows.Forms.Label idCatLabel;
         private System.Windows.Forms.Button btnAceptarAlta;
         private System.Windows.Forms.Button btnCancelarAlta;
         private System.Windows.Forms.Label lblAlta;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }

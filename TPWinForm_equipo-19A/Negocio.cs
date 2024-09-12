@@ -53,7 +53,7 @@ namespace TPWinForm_equipo_19A
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.marca.Nombre + ", " + nuevo.categoria.Descripcion + ", " + nuevo.Precio + ")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.marca.Id + ", " + nuevo.categoria.Id + ", " + nuevo.Precio + ")");
                 datos.ejecutarAccion();
 
 
