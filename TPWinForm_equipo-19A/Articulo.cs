@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_equipo_19A
 {
-     class Articulo
+    public class Articulo
     {
         public int Id { get;  set; }
         public string Codigo { get;  set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPWinForm_equipo_19A
 {
-    class Categoria
+   public class Categoria
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

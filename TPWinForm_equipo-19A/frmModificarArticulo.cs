@@ -11,12 +11,18 @@ using System.Windows.Forms;
 namespace TPWinForm_equipo_19A
 {
     public partial class frmModificarArticulo : Form
-    {
+        
+    {   
+        private Articulo articulo = null;
         public frmModificarArticulo()
         {
             InitializeComponent();
         }
 
-
+        public frmModificarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+        this.articulo = articulo;
+        }
     }
 }
