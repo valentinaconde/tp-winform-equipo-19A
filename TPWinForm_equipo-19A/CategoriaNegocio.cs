@@ -57,14 +57,14 @@ namespace TPWinForm_equipo_19A
             }
         }
 
-        public void modificar(Categoria categoria)
+        public void modificar(int id, string desc)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("update CATEGORIAS set Descripcion = @Descripcion where Id = @Id");
-                datos.setearParametro("@Descripcion", categoria.Descripcion);
-                datos.setearParametro("@Id", categoria.Id);
+                datos.setearParametro("@Descripcion", desc);
+                datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

@@ -42,8 +42,9 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
-            this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.btnAgregarCategoriaMarca = new System.Windows.Forms.Button();
+            this.btnEliminarCategoriaMarca = new System.Windows.Forms.Button();
+            this.btnModCategoriaMarca = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
@@ -199,26 +200,38 @@
             this.pbxArticulo.TabStop = false;
             this.pbxArticulo.Click += new System.EventHandler(this.pbxArticulo_Click);
             // 
-            // btnAgregarCategoria
+            // btnAgregarCategoriaMarca
             // 
-            this.btnAgregarCategoria.AccessibleName = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(590, 304);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(119, 25);
-            this.btnAgregarCategoria.TabIndex = 8;
-            this.btnAgregarCategoria.Text = "Agregar categoria";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            this.btnAgregarCategoriaMarca.AccessibleName = "btnAgregarCategoria";
+            this.btnAgregarCategoriaMarca.Location = new System.Drawing.Point(655, 296);
+            this.btnAgregarCategoriaMarca.Name = "btnAgregarCategoriaMarca";
+            this.btnAgregarCategoriaMarca.Size = new System.Drawing.Size(197, 25);
+            this.btnAgregarCategoriaMarca.TabIndex = 8;
+            this.btnAgregarCategoriaMarca.Text = "Agregar marca/categoria";
+            this.btnAgregarCategoriaMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoriaMarca.Click += new System.EventHandler(this.btnAgregarCategoriaMarca_Click);
             // 
-            // btnAgregarMarca
+            // btnEliminarCategoriaMarca
             // 
-            this.btnAgregarMarca.AccessibleName = "btnAgregarMarca";
-            this.btnAgregarMarca.Location = new System.Drawing.Point(715, 304);
-            this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(119, 25);
-            this.btnAgregarMarca.TabIndex = 9;
-            this.btnAgregarMarca.Text = "Agregar Marca";
-            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoriaMarca.AccessibleName = "btnEliminarCategoriaMarca";
+            this.btnEliminarCategoriaMarca.Location = new System.Drawing.Point(655, 358);
+            this.btnEliminarCategoriaMarca.Name = "btnEliminarCategoriaMarca";
+            this.btnEliminarCategoriaMarca.Size = new System.Drawing.Size(197, 25);
+            this.btnEliminarCategoriaMarca.TabIndex = 9;
+            this.btnEliminarCategoriaMarca.Text = "Eliminar marca/categoria";
+            this.btnEliminarCategoriaMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoriaMarca.Click += new System.EventHandler(this.btnEliminarCategoriaMarca_Click);
+            // 
+            // btnModCategoriaMarca
+            // 
+            this.btnModCategoriaMarca.AccessibleName = "btnAgregarCategoria";
+            this.btnModCategoriaMarca.Location = new System.Drawing.Point(655, 327);
+            this.btnModCategoriaMarca.Name = "btnModCategoriaMarca";
+            this.btnModCategoriaMarca.Size = new System.Drawing.Size(197, 25);
+            this.btnModCategoriaMarca.TabIndex = 10;
+            this.btnModCategoriaMarca.Text = "Modificar marca/categoria";
+            this.btnModCategoriaMarca.UseVisualStyleBackColor = true;
+            this.btnModCategoriaMarca.Click += new System.EventHandler(this.btnModCategoriaMarca_Click);
             // 
             // Form1
             // 
@@ -227,8 +240,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1353, 711);
-            this.Controls.Add(this.btnAgregarMarca);
-            this.Controls.Add(this.btnAgregarCategoria);
+            this.Controls.Add(this.btnModCategoriaMarca);
+            this.Controls.Add(this.btnEliminarCategoriaMarca);
+            this.Controls.Add(this.btnAgregarCategoriaMarca);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.groupBox1);
@@ -266,8 +280,9 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pbxArticulo;
-        private System.Windows.Forms.Button btnAgregarCategoria;
-        private System.Windows.Forms.Button btnAgregarMarca;
+        private System.Windows.Forms.Button btnAgregarCategoriaMarca;
+        private System.Windows.Forms.Button btnEliminarCategoriaMarca;
+        private System.Windows.Forms.Button btnModCategoriaMarca;
     }
 }
 

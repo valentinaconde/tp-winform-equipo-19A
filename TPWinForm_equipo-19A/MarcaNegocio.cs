@@ -51,14 +51,14 @@ namespace TPWinForm_equipo_19A
             }
         }
 
-        public void modificar(Marca marca)
+        public void modificar(int id, string desc)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("update MARCAS set Descripcion = @Descripcion where Id = @Id");
-                datos.setearParametro("@Descripcion", marca.Nombre);
-                datos.setearParametro("@Id", marca.Id);
+                datos.setearParametro("@Descripcion", desc);
+                datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

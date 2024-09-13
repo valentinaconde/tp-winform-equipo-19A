@@ -54,11 +54,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAgregar.cs">
+    <Compile Include="frmElementos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregar.Designer.cs">
-      <DependentUpon>frmAgregar.cs</DependentUpon>
+    <Compile Include="frmElementos.Designer.cs">
+      <DependentUpon>frmElementos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAltaArticulo.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregar.resx">
-      <DependentUpon>frmAgregar.cs</DependentUpon>
+    <EmbeddedResource Include="frmElementos.resx">
+      <DependentUpon>frmElementos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaArticulo.resx">
       <DependentUpon>frmAltaArticulo.cs</DependentUpon>

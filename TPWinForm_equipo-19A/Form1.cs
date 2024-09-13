@@ -139,10 +139,25 @@ namespace TPWinForm_equipo_19A
             dgvArticulos.Columns["Id"].Visible = false;
         }
 
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void btnAgregarCategoriaMarca_Click(object sender, EventArgs e)
         {
-            frmAgregar agregar = new frmAgregar();
+            frmElementos agregar = new frmElementos("agregar");
             agregar.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminarCategoriaMarca_Click(object sender, EventArgs e)
+        {
+            frmElementos eliminar = new frmElementos("eliminar");
+            eliminar.ShowDialog();
+            cargar();
+
+        }
+
+        private void btnModCategoriaMarca_Click(object sender, EventArgs e)
+        {
+            frmElementos modificar = new frmElementos("modificar");
+            modificar.ShowDialog();
             cargar();
         }
     }

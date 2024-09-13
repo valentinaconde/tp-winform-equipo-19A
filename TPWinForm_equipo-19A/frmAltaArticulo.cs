@@ -34,6 +34,7 @@ namespace TPWinForm_equipo_19A
         private void btnAceptarAlta_Click(object sender, EventArgs e)
         {
                 Negocio negocio = new Negocio();
+            btnAceptarAlta.Enabled = false;
             try
             {
                 if(articulo == null)
@@ -65,6 +66,10 @@ namespace TPWinForm_equipo_19A
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                btnAceptarAlta.Enabled = true;
             }
         }
 
