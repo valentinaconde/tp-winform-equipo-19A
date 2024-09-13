@@ -22,7 +22,7 @@ namespace TPWinForm_equipo_19A
     public partial class Form1 : Form
     {
         private List<Articulo> listaArticulos;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace TPWinForm_equipo_19A
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            cargar();
 
         }
 
@@ -44,6 +45,7 @@ namespace TPWinForm_equipo_19A
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
+            cargar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -53,13 +55,14 @@ namespace TPWinForm_equipo_19A
             try
             {
                 DialogResult respuesta = MessageBox.Show("¿Estás seguro que querés eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(respuesta == DialogResult.Yes)
+                if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                     negocio.eliminar(seleccionado.Id);
+                    cargar();
                 }
-                
-                
+
+
 
             }
             catch (Exception ex)
@@ -81,14 +84,13 @@ namespace TPWinForm_equipo_19A
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Negocio negocio = new Negocio();
-            listaArticulos = negocio.Listar();
-            dgvArticulos.DataSource = listaArticulos;
+            //Negocio negocio = new Negocio();
+            //listaArticulos = negocio.Listar();
+            //dgvArticulos.DataSource = listaArticulos;
 
-            dgvArticulos.Columns["UrlImagen"].Visible = false;
-            dgvArticulos.Columns["imagen"].Visible = false;
-            dgvArticulos.Columns["Id"].Visible = false;
-            pbxArticulo.Load(listaArticulos[0].UrlImagen);
+            //ocultarColumnas();
+            //pbxArticulo.Load(listaArticulos[0].UrlImagen);
+            cargar();
             dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
 
         }
@@ -102,12 +104,13 @@ namespace TPWinForm_equipo_19A
         {
 
         }
-        //ESTA COMENTADO EN EL DESIGNER TAMBIEN
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
+            if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -120,6 +123,30 @@ namespace TPWinForm_equipo_19A
             {
                 pbxArticulo.Load("https://6104926.fs1.hubspotusercontent-na1.net/hubfs/6104926/Imported_Blog_Media/defect1.jpg");
             }
+        }
+
+        private void cargar()
+        {
+            Negocio negocio = new Negocio();
+            try
+            {
+                listaArticulos = negocio.Listar();
+                dgvArticulos.DataSource = listaArticulos;
+                ocultarColumnas();
+                cargarImagen(listaArticulos[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["imagen"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
         }
     }
 }

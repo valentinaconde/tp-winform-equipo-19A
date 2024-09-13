@@ -124,7 +124,7 @@
             // 
             this.idMarcaLabel.AccessibleName = "idMarcaLabel";
             this.idMarcaLabel.AutoSize = true;
-            this.idMarcaLabel.Location = new System.Drawing.Point(49, 195);
+            this.idMarcaLabel.Location = new System.Drawing.Point(49, 234);
             this.idMarcaLabel.Name = "idMarcaLabel";
             this.idMarcaLabel.Size = new System.Drawing.Size(37, 13);
             this.idMarcaLabel.TabIndex = 13;
@@ -134,7 +134,7 @@
             // 
             this.idCatLabel.AccessibleName = "idCatLabel";
             this.idCatLabel.AutoSize = true;
-            this.idCatLabel.Location = new System.Drawing.Point(34, 231);
+            this.idCatLabel.Location = new System.Drawing.Point(34, 276);
             this.idCatLabel.Name = "idCatLabel";
             this.idCatLabel.Size = new System.Drawing.Size(52, 13);
             this.idCatLabel.TabIndex = 14;
@@ -143,7 +143,7 @@
             // btnAceptarAlta
             // 
             this.btnAceptarAlta.AccessibleName = "btnAceptarAlta";
-            this.btnAceptarAlta.Location = new System.Drawing.Point(212, 328);
+            this.btnAceptarAlta.Location = new System.Drawing.Point(211, 314);
             this.btnAceptarAlta.Name = "btnAceptarAlta";
             this.btnAceptarAlta.Size = new System.Drawing.Size(108, 35);
             this.btnAceptarAlta.TabIndex = 7;
@@ -154,7 +154,7 @@
             // btnCancelarAlta
             // 
             this.btnCancelarAlta.AccessibleName = "btnCancelarAlta";
-            this.btnCancelarAlta.Location = new System.Drawing.Point(22, 328);
+            this.btnCancelarAlta.Location = new System.Drawing.Point(21, 314);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
             this.btnCancelarAlta.Size = new System.Drawing.Size(108, 35);
             this.btnCancelarAlta.TabIndex = 8;
@@ -166,7 +166,7 @@
             // 
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(95, 192);
+            this.cboMarca.Location = new System.Drawing.Point(95, 231);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(195, 21);
             this.cboMarca.TabIndex = 4;
@@ -175,7 +175,7 @@
             // 
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(95, 223);
+            this.cboCategoria.Location = new System.Drawing.Point(95, 268);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(195, 21);
             this.cboCategoria.TabIndex = 5;
@@ -183,7 +183,7 @@
             // urlImagenTextBox
             // 
             this.urlImagenTextBox.AccessibleName = "urlImagenTextBox";
-            this.urlImagenTextBox.Location = new System.Drawing.Point(95, 261);
+            this.urlImagenTextBox.Location = new System.Drawing.Point(95, 191);
             this.urlImagenTextBox.Name = "urlImagenTextBox";
             this.urlImagenTextBox.Size = new System.Drawing.Size(195, 20);
             this.urlImagenTextBox.TabIndex = 6;
@@ -194,7 +194,7 @@
             // 
             this.urlImagenLabel.AccessibleName = "urlImagenLabel";
             this.urlImagenLabel.AutoSize = true;
-            this.urlImagenLabel.Location = new System.Drawing.Point(28, 264);
+            this.urlImagenLabel.Location = new System.Drawing.Point(28, 194);
             this.urlImagenLabel.Name = "urlImagenLabel";
             this.urlImagenLabel.Size = new System.Drawing.Size(58, 13);
             this.urlImagenLabel.TabIndex = 15;
