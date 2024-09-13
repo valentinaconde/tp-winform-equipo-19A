@@ -15,7 +15,7 @@ namespace TPWinForm_equipo_19A
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, Precio, C.Descripcion Categoria, M.Descripcion Marca, I.ImagenUrl urlImagen FROM ARTICULOS A, CATEGORIAS C, MARCAS M, IMAGENES I WHERE A.IdMarca = M.Id  AND A.IdCategoria = C.Id AND A.Id = I.IdArticulo");
+                datos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, Precio, C.Descripcion Categoria, M.Descripcion Marca, I.ImagenUrl urlImagen, A.IdMarca, A.IdCategoria FROM ARTICULOS A, CATEGORIAS C, MARCAS M, IMAGENES I WHERE A.IdMarca = M.Id  AND A.IdCategoria = C.Id AND A.Id = I.IdArticulo");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,9 +27,10 @@ namespace TPWinForm_equipo_19A
                     aux.Descripcion = datos.Lector["Descripcion"].ToString();
                     aux.marca = new Marca();
                     aux.marca.Nombre = datos.Lector["Marca"].ToString();
+                    aux.marca.Id = (int)datos.Lector["IdMarca"];
                     aux.categoria = new Categoria();
                     aux.categoria.Descripcion = datos.Lector["Categoria"].ToString();
-                    //aux.IdCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.categoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
                     aux.UrlImagen = datos.Lector["urlImagen"].ToString();
 
@@ -87,12 +88,30 @@ namespace TPWinForm_equipo_19A
         {
             try
             {
-                
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id");
+                datos.setearParametro("@Codigo", modificar.Codigo);
+                datos.setearParametro("@Nombre", modificar.Nombre);
+                datos.setearParametro("@Descripcion", modificar.Descripcion);
+                datos.setearParametro("@IdMarca", modificar.marca.Id);
+                datos.setearParametro("@IdCategoria", modificar.categoria.Id);
+                datos.setearParametro("@Precio", modificar.Precio);
+                datos.setearParametro("@Id", modificar.Id);
+
+                datos.ejecutarAccion();
+
+                datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE IdArticulo = @IdArticulo");
+                datos.setearParametro("@ImagenUrl", modificar.UrlImagen);
+                datos.setearParametro("@IdArticulo", modificar.Id);
+
+                datos.ejecutarAccion();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
             }
+
         }
 
         public void eliminar(int id)

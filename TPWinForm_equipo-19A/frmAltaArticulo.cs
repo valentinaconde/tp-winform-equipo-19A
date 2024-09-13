@@ -23,6 +23,7 @@ namespace TPWinForm_equipo_19A
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Modificar Articulo";
         }
 
         private void btnCancelarAlta_Click(object sender, EventArgs e)
@@ -32,24 +33,32 @@ namespace TPWinForm_equipo_19A
 
         private void btnAceptarAlta_Click(object sender, EventArgs e)
         {
+                Negocio negocio = new Negocio();
             try
             {
-                Articulo nuevo = new Articulo();
-                Negocio negocio = new Negocio();
+                if(articulo == null)
+                    articulo = new Articulo();
 
-                nuevo.Codigo = codTextBox.Text;
-                nuevo.Nombre = nomTextBox.Text;
-                nuevo.Descripcion = descTextBox.Text;
-                //nuevo.marca = new Marca();
-                nuevo.marca = (Marca)cboMarca.SelectedItem;
-                //chequear esto
-                //nuevo.categoria = new Categoria();
-                nuevo.categoria = (Categoria)cboCategoria.SelectedItem;
-                nuevo.Precio = Convert.ToDecimal(precTextBox.Text);
-                nuevo.UrlImagen = urlImagenTextBox.Text;
+                articulo.Codigo = codTextBox.Text;
+                articulo.Nombre = nomTextBox.Text;
+                articulo.Descripcion = descTextBox.Text;
+                articulo.marca = (Marca)cboMarca.SelectedItem;
+                articulo.categoria = (Categoria)cboCategoria.SelectedItem;
+                articulo.Precio = Convert.ToDecimal(precTextBox.Text);
+                articulo.UrlImagen = urlImagenTextBox.Text;
 
-                negocio.agregar(nuevo);
-                MessageBox.Show("Articulo agregado con exito");
+                if(articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Articulo modificado con éxito");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Articulo agregado con éxito");
+                }
+
+          
                 Close();
 
             }
@@ -63,11 +72,33 @@ namespace TPWinForm_equipo_19A
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
+            cboMarca.ValueMember = "Id";
+            cboMarca.DisplayMember = "Nombre";
+
+
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.DisplayMember = "Descripcion";
+
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
                 cboCategoria.DataSource = categoriaNegocio.listar();
+
+                if(articulo !=  null ) {
+                    codTextBox.Text = articulo.Codigo;
+                    nomTextBox.Text = articulo.Nombre.ToString();
+                    descTextBox.Text = articulo.Descripcion;
+                    precTextBox.Text = articulo.Precio.ToString();
+                    urlImagenTextBox.Text = articulo.UrlImagen;
+                    cargarImagen(articulo.UrlImagen);
+                    cboMarca.SelectedValue = articulo.marca.Id;
+                    cboCategoria.SelectedValue = articulo.categoria.Id;
+
+
+                }
+
+
             }
             catch (Exception ex) 
             {

@@ -43,7 +43,7 @@ namespace TPWinForm_equipo_19A
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
-            //modificar.showDialog();
+            modificar.ShowDialog();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace TPWinForm_equipo_19A
 
             dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["imagen"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
             pbxArticulo.Load(listaArticulos[0].UrlImagen);
             dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
 
