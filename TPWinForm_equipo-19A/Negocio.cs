@@ -65,9 +65,9 @@ namespace TPWinForm_equipo_19A
                 datos.setearParametro("@Precio", nuevo.Precio);
 
            
-                datos.ejecutarAccion();
 
                 datos.abrirConexion();
+                datos.Comando.Connection = datos.Conexion;
                 int idArticulo = Convert.ToInt32(datos.Comando.ExecuteScalar());
                 datos.cerrarConexion();
 

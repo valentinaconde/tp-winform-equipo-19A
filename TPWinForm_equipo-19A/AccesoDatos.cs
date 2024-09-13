@@ -18,6 +18,11 @@ namespace TPWinForm_equipo_19A
             get { return comando; }
         }
 
+        public SqlConnection Conexion
+        {
+            get { return conexion; }
+        }
+
         public AccesoDatos()
         {
             //TIENE MI CONTRASEÑA DE BASE DE DATOS POR LAS DUDAS:user=sa; password=les123456;
