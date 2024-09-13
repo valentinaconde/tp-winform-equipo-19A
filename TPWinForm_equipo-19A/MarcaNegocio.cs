@@ -72,8 +72,12 @@ namespace TPWinForm_equipo_19A
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("delete from MARCAS where Id = @Id");
                 datos.setearParametro("@Id", id);
+
+                datos.setearConsulta("UPDATE ARTICULOS SET IdMarca = NULL WHERE IdMarca = @Id");
+                datos.ejecutarAccion();
+
+                datos.setearConsulta("delete from MARCAS where Id = @Id");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
