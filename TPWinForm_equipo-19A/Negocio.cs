@@ -31,7 +31,7 @@ namespace TPWinForm_equipo_19A
                     aux.categoria.Descripcion = datos.Lector["Categoria"].ToString();
                     //aux.IdCategoria = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagem = datos.Lector["urlImagen"].ToString();
+                    aux.UrlImagen = datos.Lector["urlImagen"].ToString();
 
                     list.Add(aux);
                 }

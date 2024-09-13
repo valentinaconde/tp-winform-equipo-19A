@@ -85,10 +85,11 @@ namespace TPWinForm_equipo_19A
             listaArticulos = negocio.Listar();
             dgvArticulos.DataSource = listaArticulos;
 
-            //ESTO ES PARA QUE NO SE MUESTRE LA COLUMNA DE URL PERO ROMPE TAMBIE
+            //ESTO ES PARA QUE NO SE MUESTRE LA COLUMNA DE URL PERO ROMPE TAMBIEN
             //dgvArticulos.Columns["UrlImagen"].Visible = false;
-            pbxArticulo.Load(listaArticulos[0].UrlImagem);
-            
+            pbxArticulo.Load(listaArticulos[0].UrlImagen);
+            dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
+
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,8 +104,9 @@ namespace TPWinForm_equipo_19A
         //ESTA COMENTADO EN EL DESIGNER TAMBIEN
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
+            
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagem);
+            cargarImagen(seleccionado.UrlImagen);
         }
 
         private void cargarImagen(string imagen)

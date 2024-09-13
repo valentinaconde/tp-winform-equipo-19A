@@ -235,6 +235,7 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pbxArticulo;
+        
     }
 }
 

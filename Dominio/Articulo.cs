@@ -11,6 +11,6 @@
 
         public Imagen imagen { get; set; }
         public decimal Precio { get;  set; }
-        public string UrlImagem { get; set; }
+        public string UrlImagen { get; set; }
     }
 }
