@@ -17,6 +17,15 @@ namespace TPWinForm_equipo_19A
         public frmAltaArticulo()
         {
             InitializeComponent();
+
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            cboMarca.ValueMember = "Id";
+            cboMarca.DisplayMember = "Nombre";
+
+
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.DisplayMember = "Descripcion";
         }
 
         public frmAltaArticulo(Articulo articulo)
@@ -33,8 +42,13 @@ namespace TPWinForm_equipo_19A
 
         private void btnAceptarAlta_Click(object sender, EventArgs e)
         {
-                Negocio negocio = new Negocio();
-            btnAceptarAlta.Enabled = false;
+            Negocio negocio = new Negocio();
+            bool formValido = validarAgregarModificar();
+            if (!formValido)
+            {
+                MessageBox.Show("El formulario es invalido. Chequee y vuelva a intentar");
+                return;
+            }
             try
             {
                 if(articulo == null)
@@ -142,6 +156,19 @@ namespace TPWinForm_equipo_19A
 
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private bool validarAgregarModificar()
+        {
+            if(codTextBox.Text != "" && nomTextBox.Text != "" && descTextBox.Text != "" && precTextBox.Text != "" && urlImagenTextBox.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
     }

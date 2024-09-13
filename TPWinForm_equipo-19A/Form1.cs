@@ -85,7 +85,7 @@ namespace TPWinForm_equipo_19A
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
-            dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
+            
 
         }
 
@@ -100,7 +100,11 @@ namespace TPWinForm_equipo_19A
         }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -124,6 +128,7 @@ namespace TPWinForm_equipo_19A
                 dgvArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
                 cargarImagen(listaArticulos[0].UrlImagen);
+                dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
             }
             catch (Exception ex)
             {
@@ -160,5 +165,7 @@ namespace TPWinForm_equipo_19A
             modificar.ShowDialog();
             cargar();
         }
+
+   
     }
 }
