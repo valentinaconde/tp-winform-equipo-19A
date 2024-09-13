@@ -13,12 +13,22 @@ namespace TPWinForm_equipo_19A
             get { return lector; }
         }
 
+        public SqlCommand Comando
+        {
+            get { return comando; }
+        }
+
         public AccesoDatos()
         {
             //TIENE MI CONTRASEÑA DE BASE DE DATOS POR LAS DUDAS:user=sa; password=les123456;
             //bd valen: "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true"
             conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
+        }
+
+        public void abrirConexion()
+        {
+            conexion.Open();
         }
 
         public void setearConsulta(string consulta)

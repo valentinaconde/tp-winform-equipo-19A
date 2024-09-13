@@ -46,8 +46,8 @@ namespace TPWinForm_equipo_19A
                 //nuevo.categoria = new Categoria();
                 nuevo.categoria = (Categoria)cboCategoria.SelectedItem;
                 nuevo.Precio = Convert.ToDecimal(precTextBox.Text);
+                nuevo.UrlImagen = urlImagenTextBox.Text;
 
-                
                 negocio.agregar(nuevo);
                 MessageBox.Show("Articulo agregado con exito");
                 Close();
@@ -58,6 +58,7 @@ namespace TPWinForm_equipo_19A
                 MessageBox.Show(ex.ToString());
             }
         }
+
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
@@ -78,6 +79,29 @@ namespace TPWinForm_equipo_19A
         private void idMarcaTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void urlImagenTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void urlImagenTextBox_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(urlImagenTextBox.Text);
+
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                imgAltaPicBox.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                imgAltaPicBox.Load("https://6104926.fs1.hubspotusercontent-na1.net/hubfs/6104926/Imported_Blog_Media/defect1.jpg");
+            }
         }
     }
 }

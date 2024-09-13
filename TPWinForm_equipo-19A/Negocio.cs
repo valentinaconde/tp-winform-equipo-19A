@@ -66,10 +66,15 @@ namespace TPWinForm_equipo_19A
            
                 datos.ejecutarAccion();
 
+                datos.abrirConexion();
+                int idArticulo = Convert.ToInt32(datos.Comando.ExecuteScalar());
+                datos.cerrarConexion();
 
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                datos.setearParametro("@IdArticulo", idArticulo);
+                datos.setearParametro("@ImagenUrl", nuevo.UrlImagen);
 
-
-
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
