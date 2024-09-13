@@ -85,8 +85,8 @@ namespace TPWinForm_equipo_19A
             listaArticulos = negocio.Listar();
             dgvArticulos.DataSource = listaArticulos;
 
-            //ESTO ES PARA QUE NO SE MUESTRE LA COLUMNA DE URL PERO ROMPE TAMBIEN
-            //dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["imagen"].Visible = false;
             pbxArticulo.Load(listaArticulos[0].UrlImagen);
             dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
 
