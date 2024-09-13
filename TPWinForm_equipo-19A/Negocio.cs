@@ -52,10 +52,19 @@ namespace TPWinForm_equipo_19A
         {
             try
             {
-                AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (" + "'" + nuevo.Codigo +  "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " + nuevo.marca.Id + ", " + nuevo.categoria.Id + ", " + nuevo.Precio + ")");
-                datos.ejecutarAccion();
+         
 
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio); SELECT SCOPE_IDENTITY();");
+                datos.setearParametro("@Codigo", nuevo.Codigo);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@IdMarca", nuevo.marca.Id);
+                datos.setearParametro("@IdCategoria", nuevo.categoria.Id);
+                datos.setearParametro("@Precio", nuevo.Precio);
+
+           
+                datos.ejecutarAccion();
 
 
 
