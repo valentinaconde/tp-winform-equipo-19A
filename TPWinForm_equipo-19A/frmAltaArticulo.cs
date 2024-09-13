@@ -134,5 +134,10 @@ namespace TPWinForm_equipo_19A
                 imgAltaPicBox.Load("https://6104926.fs1.hubspotusercontent-na1.net/hubfs/6104926/Imported_Blog_Media/defect1.jpg");
             }
         }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

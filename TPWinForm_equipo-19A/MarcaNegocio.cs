@@ -35,5 +35,53 @@ namespace TPWinForm_equipo_19A
                 throw ex;
             }
         }
+
+        public void agregar(string descripcion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into MARCAS (Descripcion) values (@Descripcion)");
+                datos.setearParametro("@Descripcion", descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void modificar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update MARCAS set Descripcion = @Descripcion where Id = @Id");
+                datos.setearParametro("@Descripcion", marca.Nombre);
+                datos.setearParametro("@Id", marca.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from MARCAS where Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

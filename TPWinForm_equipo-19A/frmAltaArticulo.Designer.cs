@@ -45,6 +45,7 @@
             this.urlImagenTextBox = new System.Windows.Forms.TextBox();
             this.urlImagenLabel = new System.Windows.Forms.Label();
             this.imgAltaPicBox = new System.Windows.Forms.PictureBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.imgAltaPicBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,6 +171,7 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(195, 21);
             this.cboMarca.TabIndex = 4;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
@@ -261,5 +263,6 @@
         private System.Windows.Forms.TextBox urlImagenTextBox;
         private System.Windows.Forms.Label urlImagenLabel;
         private System.Windows.Forms.PictureBox imgAltaPicBox;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

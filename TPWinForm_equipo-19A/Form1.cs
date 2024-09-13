@@ -84,12 +84,6 @@ namespace TPWinForm_equipo_19A
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Negocio negocio = new Negocio();
-            //listaArticulos = negocio.Listar();
-            //dgvArticulos.DataSource = listaArticulos;
-
-            //ocultarColumnas();
-            //pbxArticulo.Load(listaArticulos[0].UrlImagen);
             cargar();
             dgvArticulos.SelectionChanged += dgvArticulos_SelectionChanged;
 
@@ -106,11 +100,7 @@ namespace TPWinForm_equipo_19A
         }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
-            {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.UrlImagen);
-            }
+
         }
 
         private void cargarImagen(string imagen)
@@ -147,6 +137,13 @@ namespace TPWinForm_equipo_19A
             dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["imagen"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
+        }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            frmAgregar agregar = new frmAgregar();
+            agregar.ShowDialog();
+            cargar();
         }
     }
 }

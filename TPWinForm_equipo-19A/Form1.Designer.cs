@@ -42,6 +42,8 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
@@ -197,6 +199,27 @@
             this.pbxArticulo.TabStop = false;
             this.pbxArticulo.Click += new System.EventHandler(this.pbxArticulo_Click);
             // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.AccessibleName = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(590, 304);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(119, 25);
+            this.btnAgregarCategoria.TabIndex = 8;
+            this.btnAgregarCategoria.Text = "Agregar categoria";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            // 
+            // btnAgregarMarca
+            // 
+            this.btnAgregarMarca.AccessibleName = "btnAgregarMarca";
+            this.btnAgregarMarca.Location = new System.Drawing.Point(715, 304);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(119, 25);
+            this.btnAgregarMarca.TabIndex = 9;
+            this.btnAgregarMarca.Text = "Agregar Marca";
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AccessibleName = "frmListadoArticulos";
@@ -204,6 +227,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1353, 711);
+            this.Controls.Add(this.btnAgregarMarca);
+            this.Controls.Add(this.btnAgregarCategoria);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.groupBox1);
@@ -241,7 +266,8 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pbxArticulo;
-        
+        private System.Windows.Forms.Button btnAgregarCategoria;
+        private System.Windows.Forms.Button btnAgregarMarca;
     }
 }
 
