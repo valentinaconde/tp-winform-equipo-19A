@@ -177,15 +177,24 @@
             // dgvArticulos
             // 
             this.dgvArticulos.AccessibleName = "dgvArticulos";
+            this.dgvArticulos.AllowUserToAddRows = false;
+            this.dgvArticulos.AllowUserToDeleteRows = false;
+            this.dgvArticulos.AllowUserToResizeColumns = false;
+            this.dgvArticulos.AllowUserToResizeRows = false;
             this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvArticulos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.Control;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 101);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
+            this.dgvArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvArticulos.ShowEditingIcon = false;
             this.dgvArticulos.Size = new System.Drawing.Size(840, 189);
             this.dgvArticulos.TabIndex = 6;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);

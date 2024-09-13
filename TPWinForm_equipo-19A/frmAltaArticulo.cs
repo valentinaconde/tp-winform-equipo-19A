@@ -161,14 +161,50 @@ namespace TPWinForm_equipo_19A
 
         private bool validarAgregarModificar()
         {
-            if(codTextBox.Text != "" && nomTextBox.Text != "" && descTextBox.Text != "" && precTextBox.Text != "" && urlImagenTextBox.Text != "")
+            if(codTextBox.Text == "")
             {
-                return true;
-            }
-            else
-            {
+                MessageBox.Show("El campo Codigo no puede estar vacio");
                 return false;
             }
+            if (nomTextBox.Text == "")
+            {
+                MessageBox.Show("El campo Nombre no puede estar vacio");
+                return false;
+            }
+            if (descTextBox.Text == "")
+            {
+                MessageBox.Show("El campo Descripcion no puede estar vacio");
+                return false;
+            }
+            if (precTextBox.Text == "")
+            {
+                MessageBox.Show("El campo Precio no puede estar vacio");
+                return false;
+            }
+            if (urlImagenTextBox.Text == "")
+            {
+                MessageBox.Show("El campo Imagen Url no puede estar vacio");
+                return false;
+            }
+            if (cboMarca.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una marca");
+                return false;
+            }
+            if (cboCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una categoria");
+                return false;
+            }
+            foreach (char caracter in precTextBox.Text)
+            {
+                if (!char.IsNumber(caracter) )
+                {
+                    MessageBox.Show("El campo Precio solo puede contener numeros");
+                    return false;
+                }
+            }
+            return true;
 
         }
     }
