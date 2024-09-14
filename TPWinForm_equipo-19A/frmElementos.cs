@@ -129,11 +129,6 @@ namespace TPWinForm_equipo_19A
         }
 
 
-        private void cboEliminarElemento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboElemento_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(accion != "agregar") cambiarElemento();

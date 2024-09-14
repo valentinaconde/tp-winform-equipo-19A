@@ -171,7 +171,6 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(195, 21);
             this.cboMarca.TabIndex = 4;
-            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
@@ -189,7 +188,6 @@
             this.urlImagenTextBox.Name = "urlImagenTextBox";
             this.urlImagenTextBox.Size = new System.Drawing.Size(195, 20);
             this.urlImagenTextBox.TabIndex = 6;
-            this.urlImagenTextBox.TextChanged += new System.EventHandler(this.urlImagenTextBox_TextChanged);
             this.urlImagenTextBox.Leave += new System.EventHandler(this.urlImagenTextBox_Leave);
             // 
             // urlImagenLabel

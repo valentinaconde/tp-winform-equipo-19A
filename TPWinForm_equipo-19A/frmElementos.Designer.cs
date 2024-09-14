@@ -101,7 +101,6 @@
             this.cboEliminarElemento.Name = "cboEliminarElemento";
             this.cboEliminarElemento.Size = new System.Drawing.Size(252, 21);
             this.cboEliminarElemento.TabIndex = 6;
-            this.cboEliminarElemento.SelectedIndexChanged += new System.EventHandler(this.cboEliminarElemento_SelectedIndexChanged);
             // 
             // lblElemento
             // 

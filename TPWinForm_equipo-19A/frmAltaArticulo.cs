@@ -126,15 +126,6 @@ namespace TPWinForm_equipo_19A
            
         }
 
-        private void idMarcaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void urlImagenTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void urlImagenTextBox_Leave(object sender, EventArgs e)
         {
@@ -154,10 +145,6 @@ namespace TPWinForm_equipo_19A
             }
         }
 
-        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private bool validarAgregarModificar()
         {
