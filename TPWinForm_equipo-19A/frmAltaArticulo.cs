@@ -198,11 +198,12 @@ namespace TPWinForm_equipo_19A
             }
             foreach (char caracter in precTextBox.Text)
             {
-                if (!char.IsNumber(caracter) )
+                if (!char.IsDigit(caracter) && caracter != ',')
                 {
-                    MessageBox.Show("El campo Precio solo puede contener numeros");
+                    MessageBox.Show("El campo Precio solo puede contener numeros y una coma");
                     return false;
                 }
+
             }
             return true;
 
