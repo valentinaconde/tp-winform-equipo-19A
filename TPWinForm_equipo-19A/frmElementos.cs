@@ -55,6 +55,12 @@ namespace TPWinForm_equipo_19A
 
         private void btnAceptarElemento_Click(object sender, EventArgs e)
         {
+            bool formValido = validarCampos();
+            if (!formValido)
+            {
+                MessageBox.Show("El formulario es invalido. Chequee y vuelva a intentar");
+                return;
+            }
             if (cboElemento.Text == "Categoria")
             {
                 CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
@@ -128,6 +134,16 @@ namespace TPWinForm_equipo_19A
         private void cboElemento_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(accion != "agregar") cambiarElemento();
+        }
+
+        private bool validarCampos()
+        {
+            if(txtBoxAgregar.Text == "")
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 }

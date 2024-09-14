@@ -95,6 +95,7 @@
             // cboEliminarElemento
             // 
             this.cboEliminarElemento.AccessibleName = "cboEliminarElemento";
+            this.cboEliminarElemento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEliminarElemento.FormattingEnabled = true;
             this.cboEliminarElemento.Location = new System.Drawing.Point(102, 73);
             this.cboEliminarElemento.Name = "cboEliminarElemento";
@@ -111,7 +112,7 @@
             this.lblElemento.TabIndex = 7;
             this.lblElemento.Text = "Eliminar";
             // 
-            // frmAgregar
+            // frmElementos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,7 +125,7 @@
             this.Controls.Add(this.labelElementoTxt);
             this.Controls.Add(this.txtBoxAgregar);
             this.Controls.Add(this.lblNomElemento);
-            this.Name = "frmAgregar";
+            this.Name = "frmElementos";
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.frmAgregar_Load);
             this.ResumeLayout(false);
