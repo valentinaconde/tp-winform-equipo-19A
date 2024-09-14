@@ -56,7 +56,7 @@ namespace TPWinForm_equipo_19A
         private void btnAceptarElemento_Click(object sender, EventArgs e)
         {
             bool formValido = validarCampos();
-            if (!formValido)
+            if (!formValido && accion != "eliminar")
             {
                 MessageBox.Show("El formulario es invalido. Chequee y vuelva a intentar");
                 return;

@@ -22,17 +22,17 @@ namespace TPWinForm_equipo_19A
                 {
                     Articulo aux = new Articulo();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Codigo = datos.Lector["Codigo"].ToString();
-                    aux.Nombre = datos.Lector["Nombre"].ToString();
-                    aux.Descripcion = datos.Lector["Descripcion"].ToString();
+                    aux.Codigo = datos.Lector["Codigo"] != DBNull.Value ? datos.Lector["Codigo"].ToString() : string.Empty;
+                    aux.Nombre = datos.Lector["Nombre"] != DBNull.Value ? datos.Lector["Nombre"].ToString() : string.Empty;
+                    aux.Descripcion = datos.Lector["Descripcion"] != DBNull.Value ? datos.Lector["Descripcion"].ToString() : string.Empty;
                     aux.marca = new Marca();
-                    aux.marca.Nombre = datos.Lector["Marca"].ToString();
-                    aux.marca.Id = (int)datos.Lector["IdMarca"];
+                    aux.marca.Nombre = datos.Lector["Marca"] != DBNull.Value ? datos.Lector["Marca"].ToString() : "Sin Marca";
+                    aux.marca.Id = datos.Lector["IdMarca"] != DBNull.Value ? (int)datos.Lector["IdMarca"] : 0;
                     aux.categoria = new Categoria();
-                    aux.categoria.Descripcion = datos.Lector["Categoria"].ToString();
-                    aux.categoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = datos.Lector["urlImagen"].ToString();
+                    aux.categoria.Descripcion = datos.Lector["Categoria"] != DBNull.Value ? datos.Lector["Categoria"].ToString() : "Sin Categoría";
+                    aux.categoria.Id = datos.Lector["IdCategoria"] != DBNull.Value ? (int)datos.Lector["IdCategoria"] : 0;
+                    aux.Precio = datos.Lector["Precio"] != DBNull.Value ? (decimal)datos.Lector["Precio"] : 0;
+                    aux.UrlImagen = datos.Lector["urlImagen"] != DBNull.Value ? datos.Lector["urlImagen"].ToString() : string.Empty;
 
                     list.Add(aux);
                 }
