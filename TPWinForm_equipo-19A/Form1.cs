@@ -197,12 +197,12 @@ namespace TPWinForm_equipo_19A
         {
             if(cboCampo.SelectedIndex < 0)
             {
-                MessageBox.Show("Porfavor seleccion el campo.");
+                MessageBox.Show("Por favor seleccion el campo.");
                 return true;
             }
             if (cboCriterio.SelectedIndex < 0)
             {
-                MessageBox.Show("Porfavor seleccion el criterio.");
+                MessageBox.Show("Por favor seleccion el criterio.");
                 return true;
             }
             if(cboCampo.SelectedItem.ToString() == "Numero")
