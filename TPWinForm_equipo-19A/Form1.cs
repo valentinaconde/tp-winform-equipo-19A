@@ -78,16 +78,6 @@ namespace TPWinForm_equipo_19A
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblPrecio_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
@@ -97,15 +87,6 @@ namespace TPWinForm_equipo_19A
 
         }
 
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pbxArticulo_Click(object sender, EventArgs e)
-        {
-
-        }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvArticulos.CurrentRow != null)

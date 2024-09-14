@@ -91,7 +91,10 @@ namespace TPWinForm_equipo_19A
                     marcaNegocio.agregar(txtBoxAgregar.Text);
 
                 }
-
+                else if (accion == "modificar")
+                {
+                    marcaNegocio.modificar((int)cboEliminarElemento.SelectedValue, txtBoxAgregar.Text);
+                }
             }
 
             Close();

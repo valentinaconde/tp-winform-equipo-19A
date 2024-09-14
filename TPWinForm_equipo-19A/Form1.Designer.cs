@@ -128,7 +128,6 @@
             this.lblFiltro.Size = new System.Drawing.Size(29, 13);
             this.lblFiltro.TabIndex = 6;
             this.lblFiltro.Text = "Filtro";
-            this.lblFiltro.Click += new System.EventHandler(this.lblPrecio_Click);
             // 
             // lblCriterio
             // 
@@ -174,7 +173,6 @@
             this.dgvArticulos.ShowEditingIcon = false;
             this.dgvArticulos.Size = new System.Drawing.Size(840, 189);
             this.dgvArticulos.TabIndex = 6;
-            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
             // pbxArticulo
             // 
@@ -184,7 +182,6 @@
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 7;
             this.pbxArticulo.TabStop = false;
-            this.pbxArticulo.Click += new System.EventHandler(this.pbxArticulo_Click);
             // 
             // btnAgregarCategoriaMarca
             // 
