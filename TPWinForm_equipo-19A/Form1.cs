@@ -91,7 +91,9 @@ namespace TPWinForm_equipo_19A
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
-            
+            cboCampo.Items.Add("Codigo");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripcion");
 
         }
 
@@ -172,6 +174,82 @@ namespace TPWinForm_equipo_19A
             cargar();
         }
 
-   
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+            if(opcion == "Numero")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Porfavor seleccion el campo.");
+                return true;
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Porfavor seleccion el criterio.");
+                return true;
+            }
+            if(cboCampo.SelectedItem.ToString() == "Numero")
+            {
+                if (!(soloNumeros(txtFiltro.Text)))
+                {
+                    MessageBox.Show("Solo numeros para el campo numerico.");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach(char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Negocio negocio = new Negocio();
+            try
+            {
+                if (validarFiltro() == true)
+                {
+                    return;
+                }
+
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.ToString());
+            }
+
+         
+        }
     }
 }
