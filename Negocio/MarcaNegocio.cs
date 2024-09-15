@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using Dominio;
 
-namespace TPWinForm_equipo_19A
+namespace Negocio
 {
-    class CategoriaNegocio
+   public class MarcaNegocio
     {
-        public List<Categoria> listar() 
-        { 
-            List<Categoria> lista = new List<Categoria>();
+        public List<Marca> listar() 
+        {
+            List<Marca> lista = new List<Marca>();
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
-                datos.setearConsulta("select Id, Descripcion from CATEGORIAS");
+                datos.setearConsulta("select Id, Descripcion from MARCAS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
+                    Marca aux = new Marca();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Descripcion = datos.Lector["Descripcion"].ToString();
+                    aux.Nombre = datos.Lector["Descripcion"].ToString();
 
                     lista.Add(aux);
                 }
@@ -32,7 +30,7 @@ namespace TPWinForm_equipo_19A
                 datos.cerrarConexion();
                 return lista;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -43,17 +41,13 @@ namespace TPWinForm_equipo_19A
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into CATEGORIAS (Descripcion) values (@Descripcion)");
+                datos.setearConsulta("insert into MARCAS (Descripcion) values (@Descripcion)");
                 datos.setearParametro("@Descripcion", descripcion);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
             }
         }
 
@@ -62,7 +56,7 @@ namespace TPWinForm_equipo_19A
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update CATEGORIAS set Descripcion = @Descripcion where Id = @Id");
+                datos.setearConsulta("update MARCAS set Descripcion = @Descripcion where Id = @Id");
                 datos.setearParametro("@Descripcion", desc);
                 datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
@@ -70,10 +64,6 @@ namespace TPWinForm_equipo_19A
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
             }
         }
 
@@ -84,21 +74,18 @@ namespace TPWinForm_equipo_19A
             {
                 datos.setearParametro("@Id", id);
 
-                datos.setearConsulta("UPDATE ARTICULOS SET IdCategoria = NULL WHERE IdCategoria = @Id");
+                datos.setearConsulta("UPDATE ARTICULOS SET IdMarca = NULL WHERE IdMarca = @Id");
                 datos.ejecutarAccion();
 
-                datos.setearConsulta("delete from CATEGORIAS where Id = @Id");
+                datos.setearConsulta("delete from MARCAS where Id = @Id");
                 datos.ejecutarAccion();
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally
-            {
-                datos.cerrarConexion();
-            }
         }
+
+
     }
 }
